@@ -1,13 +1,16 @@
 import React from "react";
 
-function About() {
+function About(props) {
   const myStyle = {
-    width: 250,
-    height: 100,
+    backgroundColor: props.mode === "dark" ? "#13466e" : "white",
+    color: props.mode === "dark" ? "white" : "#042743",
   };
   return (
     <>
-      <div className="container bg-secondary text-white p-5 text-center my-5">
+      <div
+        className={`container bg-secondary text-white p-5 text-center my-5`}
+        style={myStyle}
+      >
         <h2>About Us</h2>
         <p>
           "Textutils" is a versatile web application developed using React.js,
@@ -42,7 +45,7 @@ function About() {
                 alt="Card image cap"
                 style={myStyle}
               /> */}
-              <div className="card-body">
+              <div className="card-body" style={myStyle}>
                 <h5 className="card-title">Coder Harry</h5>
                 <p className="card-text">
                   Coder Hary is a senior developer with a wealth of experience
@@ -67,7 +70,7 @@ function About() {
                 alt="Card image cap"
                 style={myStyle}
               /> */}
-              <div className="card-body">
+              <div className="card-body" style={myStyle}>
                 <h5 className="card-title">Younus Ahamed Shuvo</h5>
                 <p className="card-text">
                   Younus Ahamed Shuvo, on the other hand, is a promising junior

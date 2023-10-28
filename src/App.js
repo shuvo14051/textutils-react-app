@@ -4,6 +4,7 @@ import About from "./components/About";
 import Navbar from "./components/Navbar";
 import TextForm from "./components/TextForm";
 import Alert from "./components/Alert";
+import Contact from "./components/Contact";
 
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
@@ -39,12 +40,15 @@ function App() {
       <Navbar title="Textutils" mode={mode} toogleMode={toogleMode} />
       <Alert alert={alert} />
       <Routes>
-        <Route exact path="/about" element={<About />} />
         <Route
           exact
           path="/"
-          element={<TextForm headline="Enter your text to analyze" />}
+          element={
+            <TextForm headline="Enter your text to analyze" mode={mode} />
+          }
         />
+        <Route exact path="/about" element={<About />} mode={mode} />
+        <Route exact path="/contact" element={<Contact mode={mode} />} />
       </Routes>
     </BrowserRouter>
   );
