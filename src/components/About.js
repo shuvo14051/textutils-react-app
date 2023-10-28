@@ -1,143 +1,93 @@
-import React, { useState } from "react";
+import React from "react";
 
-const About = () => {
-  const [myStyle, setmyStyle] = useState({
-    color: "black",
-    backgroundColor: "white",
-  });
-
-  const [textBtn, setTextBtn] = useState("Enable dark theme");
-
-  const toogleStyle = () => {
-    if (myStyle.color === "white") {
-      setmyStyle({
-        color: "black",
-        backgroundColor: "white",
-      });
-
-      setTextBtn("Enable dark theme");
-    } else {
-      setmyStyle({
-        color: "white",
-        backgroundColor: "black",
-      });
-      setTextBtn("Enable light theme");
-    }
+function About() {
+  const myStyle = {
+    width: 250,
+    height: 100,
   };
-
   return (
     <>
-      <div className="container">
-        <h1 className="my-2">About Us</h1>
-        <div className="accordion" id="accordionExample">
-          <div className="accordion-item" style={myStyle}>
-            <h2 className="accordion-header" id="headingOne">
-              <button
+      <div className="container bg-secondary text-white p-5 text-center my-5">
+        <h2>About Us</h2>
+        <p>
+          "Textutils" is a versatile web application developed using React.js,
+          designed to streamline text analysis and manipulation tasks. This
+          user-friendly tool empowers users to effortlessly manage their text
+          content with a range of useful features. With "Textutils," users have
+          the power to seamlessly switch between upper and lower case
+          formatting, providing flexibility in how text is presented. Need to
+          refine the cleanliness of your text? "Textutils" can efficiently
+          eliminate excessive spaces, ensuring a polished and well-organized
+          output. For those keen on detailed analysis, the application offers
+          precise character and word counting capabilities. This feature is
+          particularly valuable for tasks that require specific text length
+          constraints or for those seeking to gain insight into the structure
+          and composition of their content. "Textutils" is an intuitive and
+          powerful tool, designed with user convenience in mind. Whether you're
+          a content creator, writer, or anyone dealing with text processing,
+          "Textutils" simplifies the task at hand, offering a seamless and
+          efficient experience. Say goodbye to manual text adjustments and hello
+          to a smarter, more streamlined approach with "Textutils"!
+        </p>
+      </div>
+
+      <div className="container my-5 text-center">
+        <h3 className="my-4">Meet Out Team</h3>
+        <div className="row">
+          <div className="col">
+            <div className="card">
+              {/* <img
+                className="card-img-top"
+                src="hary.png"
+                alt="Card image cap"
                 style={myStyle}
-                className="accordion-button"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#collapseOne"
-                aria-expanded="true"
-                aria-controls="collapseOne"
-              >
-                Accordion Item #1
-              </button>
-            </h2>
-            <div
-              id="collapseOne"
-              className="accordion-collapse collapse show"
-              aria-labelledby="headingOne"
-              data-bs-parent="#accordionExample"
-            >
-              <div className="accordion-body">
-                <strong>This is the first item's accordion body.</strong> It is
-                shown by default, until the collapse plugin adds the appropriate
-                classNamees that we use to style each element. These classNamees
-                control the overall appearance, as well as the showing and
-                hiding via CSS transitions. You can modify any of this with
-                custom CSS or overriding our default variables. It's also worth
-                noting that just about any HTML can go within the{" "}
-                <code>.accordion-body</code>, though the transition does limit
-                overflow.
+              /> */}
+              <div className="card-body">
+                <h5 className="card-title">Coder Harry</h5>
+                <p className="card-text">
+                  Coder Hary is a senior developer with a wealth of experience
+                  and a deep understanding of software development. With a track
+                  record of delivering high-quality code and successfully
+                  leading projects, Coder Hary brings a level of expertise that
+                  is invaluable to the team. Their problem-solving skills and
+                  ability to mentor junior developers make them a valuable asset
+                  to the company.
+                </p>
+                <a href="#" className="btn btn-dark btn-block">
+                  Contact
+                </a>
               </div>
             </div>
           </div>
-          <div className="accordion-item" style={myStyle}>
-            <h2 className="accordion-header" id="headingTwo">
-              <button
+          <div className="col">
+            <div className="card">
+              {/* <img
+                className="card-img-top"
+                src="shuvo.png"
+                alt="Card image cap"
                 style={myStyle}
-                className="accordion-button collapsed"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#collapseTwo"
-                aria-expanded="false"
-                aria-controls="collapseTwo"
-              >
-                Accordion Item #2
-              </button>
-            </h2>
-            <div
-              id="collapseTwo"
-              className="accordion-collapse collapse"
-              aria-labelledby="headingTwo"
-              data-bs-parent="#accordionExample"
-            >
-              <div className="accordion-body">
-                <strong>This is the second item's accordion body.</strong> It is
-                hidden by default, until the collapse plugin adds the
-                appropriate classNamees that we use to style each element. These
-                classNamees control the overall appearance, as well as the
-                showing and hiding via CSS transitions. You can modify any of
-                this with custom CSS or overriding our default variables. It's
-                also worth noting that just about any HTML can go within the{" "}
-                <code>.accordion-body</code>, though the transition does limit
-                overflow.
-              </div>
-            </div>
-          </div>
-          <div className="accordion-item" style={myStyle}>
-            <h2 className="accordion-header" id="headingThree">
-              <button
-                style={myStyle}
-                className="accordion-button collapsed"
-                type="button"
-                data-bs-toggle="collapse"
-                data-bs-target="#collapseThree"
-                aria-expanded="false"
-                aria-controls="collapseThree"
-              >
-                Accordion Item #3
-              </button>
-            </h2>
-            <div
-              id="collapseThree"
-              className="accordion-collapse collapse"
-              aria-labelledby="headingThree"
-              data-bs-parent="#accordionExample"
-            >
-              <div className="accordion-body">
-                <strong>This is the third item's accordion body.</strong> It is
-                hidden by default, until the collapse plugin adds the
-                appropriate classNamees that we use to style each element. These
-                classNamees control the overall appearance, as well as the
-                showing and hiding via CSS transitions. You can modify any of
-                this with custom CSS or overriding our default variables. It's
-                also worth noting that just about any HTML can go within the{" "}
-                <code>.accordion-body</code>, though the transition does limit
-                overflow.
+              /> */}
+              <div className="card-body">
+                <h5 className="card-title">Younus Ahamed Shuvo</h5>
+                <p className="card-text">
+                  Younus Ahamed Shuvo, on the other hand, is a promising junior
+                  developer who shows great potential and a strong enthusiasm
+                  for learning. Their dedication to honing their skills and
+                  their willingness to take on challenges is commendable. With
+                  the guidance and mentorship of senior developers like Coder
+                  Hary, Younus Ahamed Shuvo has the opportunity to grow into a
+                  skilled developer.
+                </p>
+                <a href="#" className="btn btn-dark">
+                  Contact
+                </a>
               </div>
             </div>
           </div>
         </div>
       </div>
-      <div className="container">
-        <button onClick={toogleStyle} className="btn btn-dark my-3">
-          {textBtn}
-        </button>
-      </div>
     </>
   );
-};
+}
 
 export default About;

@@ -6,22 +6,26 @@ const TextForm = (props) => {
   const handleUpClick = () => {
     let newText = text.toUpperCase();
     setText(newText);
+    props.showAlert("Convert to upper caser", "success");
   };
 
   const handleLoClick = () => {
     let newText = text.toLowerCase();
     setText(newText);
+    props.showAlert("Convert to lower caser", "success");
   };
 
   const handleClear = () => {
     let newText = "";
     setText(newText);
+    props.showAlert("Text cleared", "success");
   };
 
   const handleCopy = () => {
     let text = document.getElementById("myBox");
     text.select();
     navigator.clipboard.writeText(text.value);
+    props.showAlert("Copied", "success");
   };
 
   const handleOnChange = (event) => {
@@ -31,6 +35,7 @@ const TextForm = (props) => {
   const handleExtraSpace = () => {
     let newText = text.split(/[ ]+/);
     setText(newText.join(" "));
+    props.showAlert("Extra space removed", "success");
   };
 
   return (
@@ -47,38 +52,27 @@ const TextForm = (props) => {
           className="form-control"
           onChange={handleOnChange}
           placeholder="Enter you text here..."
+          style={{
+            backgroundColor: props.mode === "dark" ? "#13466e" : "white",
+            color: props.mode === "dark" ? "white" : "#042743",
+          }}
         ></textarea>
-        <button
-          className="btn btn-outline-primary mt-2"
-          onClick={handleUpClick}
-        >
+        <button className="btn btn-danger mt-2" onClick={handleUpClick}>
           Convert to Uppercase
         </button>
 
-        <button
-          className="btn btn-outline-success mx-2 mt-2"
-          onClick={handleLoClick}
-        >
+        <button className="btn btn-danger mx-2 mt-2" onClick={handleLoClick}>
           Convert to Lowercase
         </button>
 
-        <button
-          className="btn btn-outline-info mx-2 mt-2"
-          onClick={handleClear}
-        >
+        <button className="btn btn-danger mx-2 mt-2" onClick={handleClear}>
           Clear
         </button>
-        <button
-          className="btn btn-outline-secondary mx-2 mt-2"
-          onClick={handleCopy}
-        >
+        <button className="btn btn-danger mx-2 mt-2" onClick={handleCopy}>
           Copy Text
         </button>
 
-        <button
-          className="btn btn-outline-danger mx-2 mt-2"
-          onClick={handleExtraSpace}
-        >
+        <button className="btn btn-danger mx-2 mt-2" onClick={handleExtraSpace}>
           Remove Extra Spaces
         </button>
       </div>
@@ -94,7 +88,7 @@ const TextForm = (props) => {
           <em>{0.008 * text.split(" ").length}</em> minutes read.
         </p>
         <h2>Preview</h2>
-        <p>{text}</p>
+        <p>{text.length > 0 ? text : "Enter text in the box to preview it"}</p>
       </div>
     </>
   );
